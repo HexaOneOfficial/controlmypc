@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>ControlMyPC v0.1</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ControlMyPC</h1>
+
+    <strong><span>Early functional concept, not final version.</span></strong>
+
+    <br>
+    <br>
+
+    <button type="button" onclick="files()">Open Files</button>&nbsp;
+    <button type="button" onclick="terminal()">Open Terminal</button>&nbsp;
+    <button type="button" onclick="browser()">Open Browser</button>
+
+    <script>
+        function files() {
+            fetch('http://0.0.0.0:5700/api/files')
+            .then(response => console.log(response['statusText']));
+        }
+
+        function terminal() {
+            fetch('http://0.0.0.0:5700/api/terminal')
+            .then(response => console.log(response['statusText']));
+        }
+
+        function browser() {
+            fetch('http://0.0.0.0:5700/api/browser')
+            .then(response => console.log(response['statusText']));
+        }
+    </script>
+
+</body>
+
+</html>
