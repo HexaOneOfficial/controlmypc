@@ -28,5 +28,10 @@ async def func(request):
     os.system('(firefox &)')
     abort(200)
 
-
+# Open Browser with pptos.ga  WIP
+@app.route('/api/browser', methods=['GET'])
+async def func(request):
+    os.system('(firefox --new-window https://www.pptos.ga/ &)')
+    abort(200)    
+    
 app.run(host="0.0.0.0", port=5700, workers=2)
